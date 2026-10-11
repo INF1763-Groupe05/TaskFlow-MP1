@@ -29,10 +29,10 @@ public class ModeleTache {
             Statut statut) {
 
         this.id = id;
-        this.titre = titre;
-        this.priorite = priorite;
+        setTitre(titre);
+        setPriorite(priorite);
         this.echeance = echeance;
-        this.statut = statut;
+        setStatut(statut);
     }
 
     // Constructeur pour la création d'une nouvelle tâche
@@ -42,8 +42,8 @@ public class ModeleTache {
             Priorite priorite) {
 
         this.id = id;
-        this.titre = titre;
-        this.priorite = priorite;
+        setTitre(titre);
+        setPriorite(priorite);
         this.echeance = null;
         this.statut = Statut.A_FAIRE;
     }
@@ -69,10 +69,18 @@ public class ModeleTache {
     }
 
     public void setTitre(String titre) {
+        if (titre == null || titre.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Le titre ne doit pas être vide.");
+        }
         this.titre = titre;
     }
 
     public void setPriorite(Priorite priorite) {
+        if (priorite == null) {
+            throw new IllegalArgumentException(
+                    "La priorité doit être BASSE, NORMALE ou ELEVEE.");
+        }
         this.priorite = priorite;
     }
 
@@ -81,6 +89,27 @@ public class ModeleTache {
     }
 
     public void setStatut(Statut statut) {
+        if (statut == null) {
+            throw new IllegalArgumentException(
+                    "Le statut doit être A_FAIRE ou TERMINEE.");
+        }
         this.statut = statut;
     }
-}
+
+
+    // Valide une date au format AAAA-MM-JJ.
+    public static LocalDate validerDate(String texte) {
+        if (texte == null
+                || !texte.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
+            throw new IllegalArgumentException(
+                    "La date doit respecter le format AAAA-MM-JJ.");
+        }
+
+        try {
+            return LocalDate.parse(texte);
+        } catch (java.time.format.DateTimeParseException e) {
+            throw new IllegalArgumentException(
+                    "La date indiquée n'existe pas.");
+        }
+     }
+    }

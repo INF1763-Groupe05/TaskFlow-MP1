@@ -5,13 +5,54 @@ public class TestSeynabou {
         GestionnaireTaches gestionnaire = new GestionnaireTaches();
 
         ModeleTache tache1 = new ModeleTache(
-                1, "", ModeleTache.Priorite.ELEVEE);
+                1, "Préparer le rapport", ModeleTache.Priorite.ELEVEE);
 
         ModeleTache tache2 = new ModeleTache(
                 2,
                 "Mettre à jour le guide utilisateur",
                 ModeleTache.Priorite.NORMALE);
+        String[] titresInvalides = {"", "   ", null};
 
+        for (String titre : titresInvalides) {
+                try {
+                        new ModeleTache(3, titre, ModeleTache.Priorite.BASSE);
+                        throw new AssertionError("Un titre invalide a été accepté !");
+                } catch (IllegalArgumentException e) {
+                        System.out.println("Titre invalide refusé : " + e.getMessage());
+        }
+        try {
+                new ModeleTache(4, "Tester la priorité", null);
+                throw new AssertionError("Une priorité null a été acceptée !");
+        } catch (IllegalArgumentException e) {
+                System.out.println("Priorité invalide refusée : " + e.getMessage());
+        }
+
+        }
+
+        try {
+                new ModeleTache(
+                        5, "Tester le statut",
+                        ModeleTache.Priorite.NORMALE,
+                        null, null);
+
+                throw new AssertionError("Un statut null a été accepté !");
+        } catch (IllegalArgumentException e) {
+                System.out.println("Statut invalide refusé : " + e.getMessage());
+         }
+
+         System.out.println("Date valide : "
+                  + ModeleTache.validerDate("2026-10-30"));
+
+        String[] datesInvalides = {"30/10/2026", "2026-02-30"};
+
+        for (String date : datesInvalides) {
+                try {
+                        ModeleTache.validerDate(date);
+                        throw new AssertionError("Une date invalide a été acceptée !");
+                } catch (IllegalArgumentException e) {
+                        System.out.println("Date refusée : " + date);
+                }
+        }
         gestionnaire.ajouterTache(tache1);
         gestionnaire.ajouterTache(tache2);
 
