@@ -17,8 +17,21 @@ public class GestionnaireTaches {
         taches.add(tache);
     }
 
+    // Ma partie : marquer une tâche comme terminée.
+    public boolean terminerTache(int id) {
+        for (ModeleTache tache : taches) {
+             if (tache.getId() == id) {
+                tache.setStatut(ModeleTache.Statut.TERMINEE);
+                return true;
+            }
+        }
+        return false;
+    }
+
    
      //Retourne la liste des tâches.
+
+     
      
     public List<ModeleTache> getTaches() {
         return taches;
