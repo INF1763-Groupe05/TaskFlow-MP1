@@ -23,7 +23,18 @@ public class TestSeynabou {
 
         System.out.println("Terminer une tâche inexistante : "
                 + gestionnaire.terminerTache(999));
+        
 
-        gestionnaire.afficherTaches();
+        System.out.println("Changer la priorité de la tâche 2 : "
+                 + gestionnaire.modifierPriorite(
+                        2, ModeleTache.Priorite.ELEVEE));
+
+        System.out.println("Priorité invalide : "
+                + gestionnaire.modifierPriorite(2, null));
+
+        System.out.println("Identifiant inexistant : "
+                + gestionnaire.modifierPriorite(
+                         999, ModeleTache.Priorite.BASSE));
+                gestionnaire.afficherTaches();
     }
 }

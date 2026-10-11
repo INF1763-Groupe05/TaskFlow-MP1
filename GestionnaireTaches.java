@@ -27,7 +27,23 @@ public class GestionnaireTaches {
         }
         return false;
     }
+    // Modifie la priorité d'une tâche grâce à son identifiant.
+    public boolean modifierPriorite(
+            int id, ModeleTache.Priorite nouvellePriorite) {
 
+        if (nouvellePriorite == null) {
+            return false;
+        }
+
+        for (ModeleTache tache : taches) {
+            if (tache.getId() == id) {
+                tache.setPriorite(nouvellePriorite);
+                return true;
+            }
+        }
+
+        return false;
+    }
    
      //Retourne la liste des tâches.
 
