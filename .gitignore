@@ -1,0 +1,5 @@
+﻿# Fichiers Java compilés
+*.class
+
+# Fichier de sauvegarde local
+data/taches.txt

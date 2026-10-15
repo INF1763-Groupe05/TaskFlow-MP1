@@ -127,4 +127,80 @@ public class GestionnaireTaches {
             default: throw new IllegalStateException("Statut inconnu.");
         }
     }
+
+    /**
+     * Marque une tâche comme terminée.
+     * Retourne false si la tâche n'existe pas.
+     */
+    public boolean marquerTacheTerminee(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException(
+                "L'identifiant doit être positif."
+            );
+        }
+
+        for (ModeleTache tache : taches) {
+            if (tache.getId() == id) {
+                tache.setStatut(ModeleTache.Statut.TERMINEE);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Modifie la priorité d'une tâche.
+     * Retourne false si la tâche n'existe pas.
+     */
+    public boolean modifierPrioriteTache(
+            int id, ModeleTache.Priorite priorite) {
+
+        if (id <= 0) {
+            throw new IllegalArgumentException(
+                "L'identifiant doit être positif."
+            );
+        }
+
+        if (priorite == null) {
+            throw new IllegalArgumentException(
+                "La priorité est obligatoire."
+            );
+        }
+
+        for (ModeleTache tache : taches) {
+            if (tache.getId() == id) {
+                tache.setPriorite(priorite);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Modifie l'échéance d'une tâche.
+     * Une échéance null supprime la date.
+     */
+    public boolean modifierEcheanceTache(
+            int id, LocalDate echeance) {
+
+        if (id <= 0) {
+            throw new IllegalArgumentException(
+                "L'identifiant doit être positif."
+            );
+        }
+
+        for (ModeleTache tache : taches) {
+            if (tache.getId() == id) {
+                tache.setEcheance(echeance);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
+
+

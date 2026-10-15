@@ -1,6 +1,5 @@
 package taskflow;
-import taskflow.ModeleTache;
-import taskflow.GestionnaireTaches;
+
 public class TestSeynabou {
 
     public static void main(String[] args) {
