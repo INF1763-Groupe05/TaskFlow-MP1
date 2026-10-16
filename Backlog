@@ -180,3 +180,48 @@ criteres d'acceptation
 
 Priorité : P1
 Estimation : 2 point
+
+
+US-12 — Gérer les identifiants des tâches
+Récit utilisateur :
+En tant qu'utilisateur, je veux que chaque tâche possède un identifiant unique afin de pouvoir la retrouver et la modifier sans la confondre avec une autre.
+Critères d'acceptation
+- Chaque nouvelle tâche reçoit automatiquement un identifiant entier positif et unique.
+- Deux tâches peuvent avoir le même titre, mais doivent posséder des identifiants différents.
+- Les identifiants restent inchangés après la sauvegarde et le rechargement des données.
+- Après le rechargement, une nouvelle tâche reçoit un identifiant qui n'est pas déjà utilisé.
+
+Priorité : P0
+Estimation : 3 points
+
+US-13 Définir le format de sauvegarde
+
+Récit utilisateur :
+
+En tant qu'utilisateur, je veux que mes tâches soient enregistrées dans un format fiable afin de pouvoir retrouver correctement toutes leurs informations lors d'une prochaine utilisation.
+
+Critères d'acceptation
+
+- Un format de fichier local est choisi pour enregistrer les tâches.
+- Le format permet de conserver toutes les informations d'une tâche (identifiant, titre, priorité, échéance et statut).
+- Les caractères spéciaux présents dans les titres sont correctement conservés.
+- Les tâches sans échéance peuvent être enregistrées sans erreur.
+- Le format choisi et l'emplacement du fichier sont documentés dans le README.md.
+
+Priorité : P0
+Estimation : 3 points
+
+US-14 — Enregistrer les tâches
+Récit utilisateur
+En tant qu'utilisateur, je veux pouvoir sauvegarder mes tâches dans un fichier local afin de conserver mes données pour une prochaine utilisation.
+
+Critères d'acceptation
+
+- L'utilisateur peut sauvegarder ses tâches à l'aide d'une commande explicite.
+- Toutes les informations des tâches sont enregistrées (identifiant, titre, priorité, échéance et statut).
+- Un message confirme que la sauvegarde a réussi.
+- Si une erreur survient lors de l'écriture du fichier, un message clair est affiché sans annoncer une sauvegarde réussie.
+
+Priorité : P0
+
+Estimation : 5 points
