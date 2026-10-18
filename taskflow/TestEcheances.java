@@ -4,6 +4,7 @@ package taskflow;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
+// Tests développés avec l'aide de l'intelligence artificielle.
 public class TestEcheances {
 
     private static int reussis = 0;
