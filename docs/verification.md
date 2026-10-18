@@ -4,11 +4,13 @@ Fichier teste : TestFonctionnalites.java
 
 | Test | Resultat attendu | Resultat observe | Conclusion |
 |---|---|---|---|
-| Modifier une priorite | La priorite change | A verifier | En attente |
-| Priorite null refusee | Une erreur est detectee | A verifier | En attente |
-| Priorite : ID inexistant | Retourne false | A verifier | En attente |
-| Terminer une tache | Statut TERMINEE | A verifier | En attente |
-| Terminer une seule tache | L'autre reste A_FAIRE | A verifier | En attente |
-| Tache deja terminee | Statut reste TERMINEE | A verifier | En attente |
-| Terminer une tache inexistante | Retourne false | A verifier | En attente |
-| Modifier priorite sans changer les autres champs | Autres champs conserves | A verifier | En attente |
+| Modifier la priorité | La priorité est modifiée | OK | Réussi |
+| Priorité null refusée | La priorité invalide est refusée | OK | Réussi |
+| Priorité : identifiant inexistant | Retourne false | OK | Réussi |
+| Terminer une tâche | Le statut devient TERMINEE | OK | Réussi |
+| Terminer une seule tâche | L'autre tâche reste A_FAIRE | OK | Réussi |
+| Tâche déjà terminée | Le statut reste TERMINEE | OK | Réussi |
+| Terminer une tâche inexistante | Retourne false | OK | Réussi |
+| Priorité sans modifier les autres champs | Les autres champs sont conservés | OK | Réussi |
+
+**Résultat final : 8 tests réussis sur 8.**
