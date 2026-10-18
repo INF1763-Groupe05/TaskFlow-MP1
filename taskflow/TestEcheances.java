@@ -3,6 +3,9 @@ package taskflow;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 // Tests développés avec l'aide de l'intelligence artificielle.
 public class TestEcheances {
@@ -106,6 +109,69 @@ public class TestEcheances {
 
             verifier(date.equals(t.getEcheance()),
                     "La date passee doit etre conservee");
+        });
+        
+                // TEST 8 : Format de date invalide
+        test("format de date invalide refuse", () -> {
+            boolean erreur = false;
+
+            try {
+                LocalDate.parse("30/11/2026");
+            } catch (DateTimeParseException e) {
+                erreur = true;
+            }
+
+            verifier(erreur,
+                    "Le format de date doit etre AAAA-MM-JJ");
+        });
+
+        // TEST 9 : Conserver l'echeance apres une date invalide
+        test("date invalide conserve l'echeance", () -> {
+            GestionnaireTaches g = new GestionnaireTaches();
+
+            LocalDate ancienneDate = LocalDate.of(2026, 11, 30);
+
+            ModeleTache t = g.creerTache(
+                    "Projet final",
+                    ModeleTache.Priorite.NORMALE,
+                    ancienneDate);
+
+            try {
+                LocalDate nouvelleDate = LocalDate.parse("2026-02-30");
+                g.modifierEcheanceTache(t.getId(), nouvelleDate);
+            } catch (DateTimeParseException e) {
+                // Date invalide : aucune modification
+            }
+
+            verifier(ancienneDate.equals(t.getEcheance()),
+                    "L'ancienne echeance doit etre conservee");
+        });
+
+        // TEST 10 : Afficher l'echeance dans la liste
+        test("afficher l'echeance", () -> {
+            GestionnaireTaches g = new GestionnaireTaches();
+
+            g.creerTache(
+                    "Faire le rapport",
+                    ModeleTache.Priorite.ELEVEE,
+                    LocalDate.of(2026, 11, 30));
+
+            PrintStream sortieOriginale = System.out;
+            ByteArrayOutputStream capture = new ByteArrayOutputStream();
+
+            try {
+                System.setOut(new PrintStream(capture, true, "UTF-8"));
+                g.afficherTaches();
+            } finally {
+                System.setOut(sortieOriginale);
+            }
+
+            String affichage = new String(
+                    capture.toByteArray(),
+                    StandardCharsets.UTF_8);
+
+            verifier(affichage.contains("2026-11-30"),
+                    "L'echeance doit apparaitre dans la liste");
         });
 
         System.out.println(
