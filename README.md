@@ -1,7 +1,9 @@
 TaskFlow — Gestionnaire de tâches
+
 1. Présentation du projet
 
 TaskFlow est une application en ligne de commande développée en Java dans le cadre du cours INF1763. Elle permet de créer, consulter et gérer des tâches, ainsi que de sauvegarder et de recharger les données.
+
 2. Fonctionnalités
 
 Les fonctionnalités prévues dans le projet sont les suivantes :
@@ -27,6 +29,7 @@ Rechargement automatique des tâches au démarrage.
 Gestion des fichiers de données absents, invalides ou illisibles.
 
 Les fonctionnalités réellement disponibles dépendent de la version intégrée à la branche principale.
+
 3. Prérequis
 
 Avant de compiler et d'exécuter le projet, les outils suivants sont nécessaires :
@@ -36,6 +39,7 @@ JDK
 Git : pour cloner le dépôt et gérer les versions.
 
 Terminal ou éditeur de code : par exemple Visual Studio Code ou IntelliJ IDEA.
+
 4. Installation, compilation et exécution
 
 Cloner le dépôt
