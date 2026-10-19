@@ -64,9 +64,7 @@ L'application crée la tâche avec un identifiant unique et le statut initial À
 Afficher les tâches
 
 La liste peut être présentée sous la forme suivante :
-
 ===== LISTE DES TÂCHES =====
-
 ID : 1
 Titre : Vérifier la sauvegarde du serveur
 Priorité : Élevée
@@ -82,6 +80,7 @@ Statut : À faire
 ----------------------------
 
 Cet exemple illustre le résultat attendu ; il ne constitue pas une preuve que toutes les fonctionnalités sont déjà intégrées.
+
 7. Sauvegarde et rechargement
 
 Sauvegarde
