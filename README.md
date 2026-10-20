@@ -1,142 +1,108 @@
-TaskFlow — Gestionnaire de tâches
+# TaskFlow — Gestionnaire de tâches
 
-1. Présentation du projet
+## Présentation du projet
 
-TaskFlow est une application en ligne de commande développée en Java dans le cadre du cours INF1763. Elle permet de créer, consulter et gérer des tâches, ainsi que de sauvegarder et de recharger les données.
+**TaskFlow** est une application en ligne de commande développée dans le cadre du cours. Elle permet de gérer une liste de tâches et de faciliter le suivi de leur avancement.
 
-2. Fonctionnalités
+Le projet est réalisé en équipe de cinq personnes.
 
-Les fonctionnalités prévues dans le projet sont les suivantes :
 
-Création d'une tâche avec un titre, un identifiant, une priorité, une échéance facultative et un statut.
+## Fonctionnalités
 
-Ajout d'une nouvelle tâche.
+Le projet prévoit les fonctionnalités suivantes :
 
-Affichage de la liste des tâches.
+- Création et ajout de tâches.
+- Affichage de la liste des tâches.
+- Modification de la priorité d’une tâche.
+- Marquage d’une tâche comme terminée.
+- Gestion des échéances.
+- Attribution d’un identifiant unique à chaque tâche.
+- Sauvegarde des tâches dans un fichier.
+- Chargement des tâches au démarrage de l’application.
+- Validation des données saisies.
+- Gestion des erreurs liées aux fichiers.
+- Tests unitaires.
 
-Modification de la priorité d'une tâche.
+> Les fonctionnalités sont à considérer comme disponibles uniquement lorsqu’elles ont été implémentées et testées dans le projet.
 
-Marquage d'une tâche comme terminée.
+## Prérequis
 
-Gestion des échéances.
 
-Attribution d'identifiants uniques.
+- Java Development Kit (JDK) :(version la plus récente prefèrée)
+- Un terminal ou une invite de commandes.
+- Git pour récupérer le dépôt et contribuer au projet.
 
-Sauvegarde des tâches dans un fichier local.
+## Compilation et exécution
 
-Rechargement automatique des tâches au démarrage.
+Les commandes exactes dépendent de l’organisation des fichiers Java et du nom du package principal.
 
-Gestion des fichiers de données absents, invalides ou illisibles.
+Si le projet utilise la structure `src/main/java/taskflow/` et une classe principale `Main` dans le package `taskflow`, les commandes sont :
 
-Les fonctionnalités réellement disponibles dépendent de la version intégrée à la branche principale.
+**1. Compiler le projet**
 
-3. Prérequis
+```bash
+javac -d out src/main/java/taskflow/*.java
+```
 
-Avant de compiler et d'exécuter le projet, les outils suivants sont nécessaires :
+**2. Exécuter l’application**
 
-JDK 
+```bash
+java -cp out taskflow.Main
+```
 
-Git : pour cloner le dépôt et gérer les versions.
 
-Terminal ou éditeur de code : par exemple Visual Studio Code ou IntelliJ IDEA.
+## Exemple d’utilisation
 
-4. Installation, compilation et exécution
+### Ajouter une tâche
 
-Cloner le dépôt
+L’utilisateur sélectionne l’option d’ajout dans le menu et saisit les informations demandées.
 
-git clone https://github.com/INF1763-Groupe05/TaskFlow-MP1.git
-cd taskflow
-
-5. Exemple d'utilisation
-
-L'exemple suivant illustre le fonctionnement attendu de l'application.
-
-Ajouter une tâche
-
-L'utilisateur sélectionne l'option d'ajout et saisit les informations suivantes :
-
+```text
 Titre : Vérifier la sauvegarde du serveur
 Priorité : Élevée
 Échéance : 2026-10-25
+```
 
-L'application crée la tâche avec un identifiant unique et le statut initial À faire.
+### Afficher la liste des tâches
 
-Afficher les tâches
+Exemple de présentation dans le terminal :
 
-La liste peut être présentée sous la forme suivante :
-===== LISTE DES TÂCHES =====
-ID : 1
-Titre : Vérifier la sauvegarde du serveur
-Priorité : Élevée
-Échéance : 2026-10-25
-Statut : À faire
-----------------------------
+```text
+========== TASKFLOW ==========
 
-ID : 2
-Titre : Mettre à jour le guide utilisateur
-Priorité : Normale
-Échéance : Aucune
-Statut : À faire
-----------------------------
+ID   TÂCHE                              PRIORITÉ    STATUT
+------------------------------------------------------------
+1    Vérifier la sauvegarde du serveur  Élevée      À faire
+2    Mettre à jour le guide utilisateur Normale     À faire
+3    Tester la validation des données   Faible      Terminée
 
-Cet exemple illustre le résultat attendu ; il ne constitue pas une preuve que toutes les fonctionnalités sont déjà intégrées.
+------------------------------------------------------------
+Nombre total de tâches : 3
+```
 
-7. Sauvegarde et rechargement
 
-Sauvegarde
 
-La sauvegarde permet d'enregistrer les tâches dans le fichier de données local. Elle doit conserver les informations des tâches afin de pouvoir les retrouver lors d'une exécution ultérieure.
+## Sauvegarde et chargement des données
 
-Le comportement attendu est le suivant :
+L’application prévoit de sauvegarder les tâches dans un fichier afin de conserver les données entre deux exécutions.
 
-L'utilisateur demande l'enregistrement des tâches.
+| Élément | Description |
+|---|---|
+| Fichier de sauvegarde | À préciser |
+| Emplacement du fichier | À préciser |
+| Format des données | À préciser |
+| Chargement au démarrage | Prévu dans le projet |
+| Gestion des erreurs de lecture | Prévue dans le projet |
 
-L'application écrit les données dans le fichier prévu.
+## Tests
 
-Un message indique si l'opération a réussi ou échoué.
+Des tests unitaires sont prévus pour vérifier le bon fonctionnement des fonctionnalités, notamment la gestion des tâches, la validation des données et la persistance des informations.
 
-Rechargement
 
-Au démarrage, l'application doit tenter de récupérer les tâches précédemment enregistrées.
+## Technologies utilisées
 
-Si le fichier existe et contient des données valides, les tâches sont rechargées.
+- **Langage :** Java
+- **Gestion de versions :** GitHub
+- **Tests :** tests unitaires Java
 
-Si le fichier est absent, l'application doit pouvoir démarrer avec une liste vide.
 
-Si le fichier est invalide ou illisible, l'application doit gérer l'erreur avec un message explicite et un comportement défini par l'équipe.
-
-Les identifiants déjà utilisés doivent être préservés afin d'éviter les conflits lors de la création de nouvelles tâches.
-
-Le déclenchement exact de la sauvegarde (commande explicite, automatique ou les deux) et la stratégie adoptée en cas de fichier invalide doivent être précisés selon le code final.
-
-8. Limites et anomalies connues
-
-Cette section doit être mise à jour au fur et à mesure des tests et de l'intégration.
-
-À ce stade, les points suivants restent à confirmer sur la version finale :
-
-Compatibilité avec la version exacte du JDK utilisée.
-
-Comportement lorsque le fichier de données est absent, mal formé ou inaccessible.
-
-Préservation des identifiants après un redémarrage.
-
-Gestion des dates invalides et des titres vides.
-
-Comportement lorsque la sauvegarde échoue.
-
-Fonctionnalités qui ne sont pas encore intégrées ou testées.
-
-Aucune anomalie ne doit être considérée comme corrigée ou confirmée sans vérification dans l'application.
-
-9. Organisation du développement
-
-Le projet utilise Git et GitHub pour faciliter le travail en équipe.
-
-Issues : suivi des fonctionnalités et des tâches.
-
-Branches : développement séparé des fonctionnalités.
-
-Commits : historique des modifications.
-
-Pull Requests : proposition et révision des changements avant fusion dans main.
