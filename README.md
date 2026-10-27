@@ -23,7 +23,7 @@ Le projet prévoit les fonctionnalités suivantes :
 - Gestion des erreurs liées aux fichiers.
 - Tests unitaires.
 
-> Les fonctionnalités sont à considérer comme disponibles uniquement lorsqu’elles ont été implémentées et testées dans le projet.
+
 
 ## Prérequis
 
