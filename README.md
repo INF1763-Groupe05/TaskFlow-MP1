@@ -86,13 +86,7 @@ Nombre total de tâches : 3
 
 L’application prévoit de sauvegarder les tâches dans un fichier afin de conserver les données entre deux exécutions.
 
-| Élément | Description |
-|---|---|
-| Fichier de sauvegarde | À préciser |
-| Emplacement du fichier | À préciser |
-| Format des données | À préciser |
-| Chargement au démarrage | Prévu dans le projet |
-| Gestion des erreurs de lecture | Prévue dans le projet |
+
 
 ## Tests
 
