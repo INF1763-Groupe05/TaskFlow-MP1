@@ -1,0 +1,72 @@
+Chargement des tâches terminé.
+Nombre de tâches chargées : 0
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : Veuillez saisir un nombre entier valide.
+Votre choix : Choix invalide.
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : --- Ajouter une tâche ---
+Titre de la tâche : Le titre ne peut pas être vide.
+Titre de la tâche : Choisissez la priorité :
+1. Basse
+2. Normale
+3. Élevée
+Votre choix : Choisissez 1, 2 ou 3.
+Choisissez la priorité :
+1. Basse
+2. Normale
+3. Élevée
+Votre choix : Échéance (AAAA-MM-JJ) ou - pour aucune : Date invalide. Exemple : 2026-12-31.
+Échéance (AAAA-MM-JJ) ou - pour aucune : Tâche créée. ID : 1
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : ID de la tâche à terminer : L'identifiant doit être positif.
+ID de la tâche à terminer : Aucune tâche ne possède cet ID.
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : ===== LISTE DES TÂCHES =====
+ID : 1
+Titre : Tache de verification
+Priorité : Normale
+Échéance : 2026-12-20
+Statut : À faire
+----------------------------
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : Au revoir ! Pensez à sauvegarder vos modifications avant de quitter.
+
