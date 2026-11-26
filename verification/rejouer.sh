@@ -18,10 +18,10 @@ mkdir -p "$CLASSES" "$RESULTATS"
 echo "Compilation de TaskFlow..."
 
 javac -encoding UTF-8 -d "$CLASSES" \
-    "$RACINE/taskflow/Main.java" \
-    "$RACINE/taskflow/ModeleTache.java" \
-    "$RACINE/taskflow/GestionnaireTaches.java" \
-    "$RACINE/taskflow/SauvegardeTaches.java"
+    "$RACINE/src/main/java/taskflow/Main.java" \
+    "$RACINE/src/main/java/taskflow/ModeleTache.java" \
+    "$RACINE/src/main/java/taskflow/GestionnaireTaches.java" \
+    "$RACINE/src/main/java/taskflow/SauvegardeTaches.java"
 
 ECHECS=0
 REUSSITES=0
