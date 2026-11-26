@@ -1,0 +1,79 @@
+Chargement des tâches terminé.
+Nombre de tâches chargées : 0
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : --- Ajouter une tâche ---
+Titre de la tâche : Choisissez la priorité :
+1. Basse
+2. Normale
+3. Élevée
+Votre choix : Échéance (AAAA-MM-JJ) ou - pour aucune : Tâche créée. ID : 1
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : ID de la tâche : Échéance (AAAA-MM-JJ) ou - pour aucune : Échéance modifiée avec succès.
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : ===== LISTE DES TÂCHES =====
+ID : 1
+Titre : Mettre a jour le systeme
+Priorité : Normale
+Échéance : 2026-12-25
+Statut : À faire
+----------------------------
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : ID de la tâche : Échéance (AAAA-MM-JJ) ou - pour aucune : Échéance modifiée avec succès.
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : ===== LISTE DES TÂCHES =====
+ID : 1
+Titre : Mettre a jour le systeme
+Priorité : Normale
+Échéance : Aucune
+Statut : À faire
+----------------------------
+
+========== TASKFLOW ==========
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer une tâche comme terminée
+4. Modifier la priorité d'une tâche
+5. Gérer l'échéance d'une tâche
+6. Sauvegarder les données
+0. Quitter
+Votre choix : Au revoir ! Pensez à sauvegarder vos modifications avant de quitter.
+
