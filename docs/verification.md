@@ -73,3 +73,70 @@ Le script compile le programme, exécute les scénarios et compare les sorties o
 Aucune différence de comportement n'a été détectée par rapport aux sorties de référence.
 
 Les scénarios devront être rejoués après chaque étape de refactoring. Les fichiers de référence ne doivent pas être modifiés lors d'un refactoring.
+
+---
+
+## MP2 — Volet D3 : Vérifications finales
+
+### Objectif
+
+Vérifier le bon fonctionnement de TaskFlow après l'intégration des refactorings, de Maven, de l'export Excel et de la journalisation.
+
+### Environnement de vérification
+
+- Système d'exploitation : Windows.
+- Terminal : Git Bash / PowerShell.
+- Version cible : v1.1.0.
+- Version du JDK : à confirmer.
+- Commit final : à compléter.
+
+### Préparation de l'environnement
+
+Un nouveau clone du dépôt a été créé afin de réaliser les vérifications dans un environnement indépendant du dossier de développement.
+
+```bash
+git clone https://github.com/INF1763-Groupe05/TaskFlow-MP1.git TaskFlow-verification-D3
+cd TaskFlow-verification-D3
+```
+
+### Tableau des vérifications finales
+
+| N° | Vérification | Résultat attendu | Résultat observé | Conclusion |
+|---|---|---|---|---|
+| 1 | Non-régression | Les huit scénarios produisent les sorties attendues | À compléter | À vérifier |
+| 2 | Compatibilité des anciennes données | Les données de la version v1.0.0 sont correctement chargées | À compléter | À vérifier |
+| 3 | Construction depuis un clone neuf | La commande Maven génère le JAR sans erreur | Maven non encore disponible dans le clone | En attente |
+| 4 | Exécution du JAR de la Release | Le JAR fonctionne avec Java uniquement, sans Maven ni code source | Release non encore publiée | En attente |
+| 5 | Export Excel nominal | Le fichier Excel contient les tâches attendues | À compléter | À vérifier |
+| 6 | Export Excel sans tâches | L'export d'une liste vide est correctement géré | À compléter | À vérifier |
+| 7 | Échec de l'export Excel | L'erreur est correctement gérée | À compléter | À vérifier |
+| 8 | Journalisation | Les événements et les erreurs sont enregistrés | À compléter | À vérifier |
+| 9 | Message Log4j | Le problème de journalisation identifié est résolu | À compléter | À vérifier |
+
+### Commandes de vérification
+
+**Scénarios de non-régression :**
+
+```bash
+bash verification/rejouer.sh
+```
+
+**Construction du projet :**
+
+```bash
+./mvnw clean package
+```
+
+**Exécution du JAR :**
+
+```bash
+java -jar target/<nom-du-jar>.jar
+```
+
+### Bilan final
+
+Le clonage du dépôt a été réalisé avec succès.
+
+Les autres vérifications seront finalisées après l'intégration des fonctionnalités du mini-projet 2 et la publication de la Release v1.1.0.
+
+La validation finale du projet reste en attente.
