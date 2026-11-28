@@ -48,7 +48,7 @@ public class GestionnaireTaches {
         }
         taches.add(tache);
         if (prochainId != 0 && tache.getId() >= prochainId) {
-            prochainId = suivant(tache.getId());
+            prochainId = calculerIdentifiantSuivant(tache.getId());
         }
     }
 
@@ -72,10 +72,10 @@ public class GestionnaireTaches {
         }
         taches.clear();
         taches.addAll(nouvellesTaches);
-        prochainId = suivant(max);
+        prochainId = calculerIdentifiantSuivant(max);
     }
 
-    private static int suivant(int id) {
+    private static int calculerIdentifiantSuivant(int id) {
         return id == Integer.MAX_VALUE ? 0 : id + 1;
     }
 
