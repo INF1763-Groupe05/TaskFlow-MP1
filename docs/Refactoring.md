@@ -78,3 +78,88 @@ Chaque refactoring sera réalisé indépendamment en suivant les étapes suivant
 Aucune sortie de référence ne doit être modifiée pendant un refactoring.
 
 
+## 6. Refactorings réalisés : avant et après
+
+### 6.1. R1 — Renommage d'une méthode (Rename)
+
+**Fichier :** `GestionnaireTaches.java`
+
+**Avant :**
+
+```java
+private static int suivant(int id) {
+    return id == Integer.MAX_VALUE ? 0 : id + 1;
+}
+```
+
+**Après :**
+
+```java
+private static int calculerIdentifiantSuivant(int id) {
+    return id == Integer.MAX_VALUE ? 0 : id + 1;
+}
+```
+
+**Amélioration apportée :**
+
+Le nouveau nom décrit clairement le rôle de la méthode. Les deux appels de la méthode ont également été mis à jour. Cette modification facilite la compréhension et la maintenance du code sans modifier sa logique.
+
+**Traçabilité :**
+
+- Issue principale : [#37 — Réaliser les refactorings du code](https://github.com/INF1763-Groupe05/TaskFlow-MP1/issues/37)
+- Branche : `refactor/R1-renommage-suivant`
+- Pull Request : lien à compléter.
+- Résultats des vérifications : à confirmer.
+
+### 6.2. R2 — Suppression du code dupliqué (Extract Method)
+
+**Fichier :** `GestionnaireTaches.java`
+
+**Avant :**
+
+Le bloc de validation suivant était répété dans trois méthodes :
+
+```java
+if (id <= 0) {
+    throw new IllegalArgumentException(
+        "L'identifiant doit être positif."
+    );
+}
+```
+
+**Après :**
+
+Une méthode commune a été créée :
+
+```java
+private void verifierIdentifiant(int id) {
+    if (id <= 0) {
+        throw new IllegalArgumentException(
+            "L'identifiant doit être positif."
+        );
+    }
+}
+```
+
+Les trois méthodes utilisent désormais l'appel suivant :
+
+```java
+verifierIdentifiant(id);
+```
+
+**Méthodes concernées :**
+
+- `marquerTacheTerminee()`
+- `modifierPrioriteTache()`
+- `modifierEcheanceTache()`
+
+**Amélioration apportée :**
+
+La validation de l'identifiant est centralisée dans une seule méthode. Cette modification réduit la duplication du code et facilite la maintenance. Toute modification future de cette règle de validation pourra être effectuée à un seul endroit.
+
+**Traçabilité :**
+
+- Issue principale : [#37 — Réaliser les refactorings du code](https://github.com/INF1763-Groupe05/TaskFlow-MP1/issues/37)
+- Branche : `refactor/R2-validation-identifiant`
+- Pull Request : lien à compléter.
+- Résultats des vérifications finales : à confirmer.
